@@ -1,0 +1,7 @@
+A <- scan(file='./Q1/Q1_01.txt', what='char', quote=NULL)
+B <- scan(file='./Q1/Q1_02.txt', what='char', quote=NULL)
+A <- gsub("^[[:punct:]]|[[:punct:]]$", "", tolower(A))
+inter <- intersect(A, B)
+Freq <- table(A[A %in% inter])
+Freq.data <- data.frame(¾îÈÖ=names(Freq), ºóµµ=as.vector(Freq))
+write.table(Freq.data, file='Q1_out.txt', quote=F, sep = '\t', col.names=NA)
